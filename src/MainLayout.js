@@ -12,7 +12,7 @@ export const MainLauout = () => {
 
 	return (
 		<View style={styles.wrapper}>
-			<Navbar title='Task list for a Day!' />
+			<Navbar title='Task list!' />
 			<View style={styles.container}>
 				{todoId ? <TodoScreen /> : <MainScreen />}
 			</View>

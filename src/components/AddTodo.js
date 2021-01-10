@@ -17,33 +17,40 @@ export const AddTodo = ({ onSubmit }) => {
 	};
 	return (
 		<View style={styles.block}>
-			<TextInput
-				style={styles.input}
-				onChangeText={setValuse}
-				value={value}
-				placeholder='new todo...'
-				autoCorrect={false}
-				autoCapitalize='none'
-			/>
 			<View style={styles.container}>
 				<View style={styles.button}>
 					<AntDesign
 						name='plus'
-						size={24}
-						color='#fff'
+						size={30}
+						color='#3700B3'
 						onPress={pressHandler}
 					/>
 				</View>
 			</View>
+			<TextInput
+				style={styles.input}
+				onChangeText={setValuse}
+				value={value}
+				placeholder='Add task'
+				autoCorrect={false}
+				autoCapitalize='none'
+			/>
 		</View>
 	);
 };
 const styles = StyleSheet.create({
 	block: {
+		height: 65,
 		flexDirection: 'row',
-		justifyContent: 'space-between',
 		alignItems: 'center',
-		marginBottom: 15,
+		padding: 15,
+		borderWidth: 1,
+		borderColor: '#eee',
+		borderRadius: 10,
+		marginBottom: 10,
+		elevation: 2,
+		backgroundColor: '#fff',
+		justifyContent: 'flex-start',
 	},
 	input: {
 		width: '80%',
@@ -52,24 +59,24 @@ const styles = StyleSheet.create({
 		borderStyle: 'solid',
 		borderBottomWidth: 2,
 		borderBottomColor: THEME.MAIN_COLOR,
-		backgroundColor: '#F5F5F5',
+		backgroundColor: '#fff',
 		fontSize: 18,
 	},
 	container: {
 		justifyContent: 'center',
-		alignItems: 'flex-end',
+		// alignItems: 'flex-end',
 	},
 	button: {
-		position: 'absolute',
-		width: 60,
-		height: 60,
-		borderRadius: 60 / 2,
-		alignItems: 'center',
-		justifyContent: 'center',
-		shadowRadius: 10,
-		shadowColor: '#F02A4B',
-		shadowOpacity: 0.3,
-		shadowOffset: { height: 10 },
-		backgroundColor: '#F02A4B',
+		// position: 'absolute',
+		// width: 60,
+		// height: 60,
+		// borderRadius: 60 / 2,
+		// alignItems: 'center',
+		// justifyContent: 'center',
+		// shadowRadius: 10,
+		// shadowColor: '#F02A4B',
+		// shadowOpacity: 0.3,
+		// shadowOffset: { height: 10 },
+		// backgroundColor: '#F02A4B',
 	},
 });

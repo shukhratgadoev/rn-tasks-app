@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
-import { Ionicons } from '@expo/vector-icons';
 import { AppText } from './ui/AppText';
 
 export const Todo = ({ todo, onRemove, onOpen }) => {
 	const [toggleCheckBox, setToggleCheckBox] = useState(false);
 	return (
-		<TouchableOpacity
-			onPress={() => onOpen(todo.id)}
-			onLongPress={onRemove.bind(null, todo.id)}>
-			<View style={styles.todo}>
-				<View style={styles.wrap}>
-					<Ionicons name='md-menu' size={24} color='black' />
-					<AppText style={styles.title}>{todo.title}</AppText>
+		<View>
+			<TouchableOpacity
+				onPress={() => onOpen(todo.id)}
+				onLongPress={onRemove.bind(null, todo.id)}>
+				<View style={styles.todo}>
+					<View style={styles.cCheckbox}></View>
+					<View style={styles.wrap}>
+						<AppText style={styles.title}>{todo.title}</AppText>
+					</View>
 				</View>
-
-				<CheckBox
-					disabled={false}
-					value={toggleCheckBox}
-					onValueChange={(newValue) => setToggleCheckBox(newValue)}
-				/>
-			</View>
-		</TouchableOpacity>
+			</TouchableOpacity>
+		</View>
 	);
 };
 const styles = StyleSheet.create({
@@ -43,10 +37,20 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 		elevation: 2,
 		backgroundColor: '#fff',
-		justifyContent: 'space-between',
+		justifyContent: 'flex-start',
 	},
 	title: {
-		fontSize: 18,
-		color: '#708090',
+		fontSize: 20,
+		color: '#000',
+	},
+	cCheckbox: {
+		height: 28,
+		width: 28,
+		borderRadius: 50,
+		borderWidth: 2,
+		borderColor: '#6200EE',
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginRight: 15,
 	},
 });
